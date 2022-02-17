@@ -18,12 +18,9 @@ Here it is:
 Thu Feb 17 11:09:04 CET 2022
 
 > g++ -std=c++20 friday.cc
-Undefined symbols for architecture x86_64:
-  "static_check<false>::static_check()", referenced from:
-      _main in friday-c06475.o
-ld: symbol(s) not found for architecture x86_64
-clang: error: linker command failed with exit code 1 (use -v to see invocation)
-
+friday.cc:4:5: error: static_assert failed due to requirement 
+    static_assert(__TIMESTAMP__[0] == 'F');
+    ^             ~~~~~~~~~~~~~~~~~~~~~~~
 ⋮
 
 > date
