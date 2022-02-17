@@ -5,18 +5,9 @@ Jordi Delgado teased me with https://github.com/jwilk/perl-friday. *—Could you
 Well, no. But I can do it in C++: The following program (without #includes) can only be compiled on Fridays.
 
 ```c++
-template <bool>
-struct static_check {
-};
-
-template <>
-struct static_check<false> {
-    static_check();
-};
-
 int main()
 {
-    static_check<(__TIMESTAMP__[0]) == 'F'>();
+    static_assert(__TIMESTAMP__[0] == 'F');
 }
 ```
 
